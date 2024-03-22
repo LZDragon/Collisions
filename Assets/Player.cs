@@ -1,23 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : IHealth
+public class Player : MonoBehaviour
 {
-    private int health;
-    private int maxHealth;
-
-
-    Player()
+    [SerializeField] private GameUI gameUI;
+    private void Start()
     {
-        
-    }
-
-    public int MaxHealth => maxHealth;
-    public int Health => health;
-    
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
+        gameUI.BindToPlayer(this.gameObject);
     }
 }

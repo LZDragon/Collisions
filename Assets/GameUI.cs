@@ -19,6 +19,25 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     private int score = 0;
 
+    public void BindToPlayer(GameObject player)
+    {
+        Debug.Log("Binding GameUI");
+        HealthComponent playerHealthComponent = null;
+        if (!player.TryGetComponent(out playerHealthComponent))
+        {
+            Debug.LogError("GameUI tried to bind to player but player gameobject is missing HealthComponent");
+            return;
+        }
+        playerHealthComponent.HandleHealthUpdated += OnPlayerHealthUpdated;
+        Debug.Log("GameUI bound to player");
+        InitializeHeathBar(playerHealthComponent.Health);
+    }
+
+    private void OnPlayerHealthUpdated(float newHealth)
+    {
+        healthBar.value = newHealth;
+    }
+
     public int Score => score;
 
     public void AddScore(int amount)
@@ -32,8 +51,9 @@ public class GameUI : MonoBehaviour
         scoreText.text = value;
     }
 
-    public void UpdateHealthBar(int health)
+    public void InitializeHeathBar(float maxHealth)
     {
-        healthBar.value = health;
+        healthBar.maxValue = maxHealth;
+        healthBar.value = maxHealth;
     }
 }

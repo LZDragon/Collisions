@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1867179840372659974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8232563540651823851}
+  - component: {fileID: 416197353443366094}
+  m_Layer: 7
+  m_Name: LaserCollison
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8232563540651823851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867179840372659974}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.19000001, y: 0.19000001, z: 0.19}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6355026160194586846}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &416197353443366094
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867179840372659974}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 9.34
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4183067136756193938
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +67,7 @@ GameObject:
   - component: {fileID: 2158695532561043712}
   - component: {fileID: 73144949994895615}
   - component: {fileID: 9015942442379976528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserEnd2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 4183067136756193938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1, y: 5, z: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -119,7 +174,7 @@ GameObject:
   - component: {fileID: 4036165420957368424}
   - component: {fileID: 2750743533275974686}
   - component: {fileID: 4865977745839474338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserEnd1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 7497286669494718504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -224,8 +279,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6355026160194586846}
   - component: {fileID: 6845789332576142603}
-  m_Layer: 0
-  m_Name: SM_LaserTrap
+  - component: {fileID: 5271765543084879551}
+  m_Layer: 7
+  m_Name: LaserTrapSingle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,6 +300,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8232563540651823851}
   - {fileID: 8822771774434926487}
   - {fileID: 1651524111144374414}
   m_Father: {fileID: 0}
@@ -262,4 +319,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserEnd1: {fileID: 7497286669494718504}
   laserEnd2: {fileID: 4183067136756193938}
+  laserCollider: {fileID: 416197353443366094}
   laserMaterial: {fileID: 2100000, guid: 70ccf915b22120b44bb88e13f7004050, type: 2}
+  width: 0
+--- !u!114 &5271765543084879551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761700876510518560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29811ff7b3d4b07428725ee611f61eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapDamageAmount: 50

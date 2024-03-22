@@ -5,28 +5,18 @@ using UnityEngine;
 
 public class LaserTrap : MonoBehaviour
 {
-    [SerializeField] private GameObject laserEnd1;
-    [SerializeField] private GameObject laserEnd2;
-    [SerializeField] private Material laserMaterial;
-    private LineRenderer laserBeam;
-    private Vector3[] laserEndPositions = new Vector3[2];
-    private void OnEnable()
-    {
-        laserBeam = gameObject.AddComponent<LineRenderer>();
-        laserBeam.material = laserMaterial;
-        laserBeam.startWidth = 0.1f;
-        laserBeam.endWidth = 0.1f;
-        laserEndPositions[0] = laserEnd1.transform.position;
-        laserEndPositions[1] = laserEnd2.transform.position;
-        laserBeam.SetPositions(laserEndPositions);
-        laserBeam.enabled = true;
-        
-    }
-
+    [SerializeField] private float trapDamageAmount;
     // Start is called before the first frame update
     void Start()
     {
-        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<HealthComponent>(out HealthComponent otherHealth) )
+        {
+            otherHealth.TakeDamage(trapDamageAmount);
+        }
     }
 
     // Update is called once per frame

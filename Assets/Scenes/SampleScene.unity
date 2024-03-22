@@ -580,7 +580,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1495626693}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121836339}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!1 &220848979
 GameObject:
@@ -1074,7 +1077,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 48
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1266,9 +1269,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8234631181678441175, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
+      propertyPath: laserCollider
+      value: 
+      objectReference: {fileID: 1374519991}
     - target: {fileID: 1210452682202455419, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651524111144374414, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6355026160194586846, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1276,7 +1287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355026160194586846, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.76
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 6355026160194586846, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1310,6 +1321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6845789332576142603, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
+      propertyPath: width
+      value: 2.86
+      objectReference: {fileID: 0}
     - target: {fileID: 8761700876510518560, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_Name
       value: LaserTrap
@@ -1320,7 +1335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822771774434926487, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.34
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1840,6 +1855,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253115390}
   m_CullTransparentMesh: 1
+--- !u!136 &1374519991 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 416197353443366094, guid: ec59fc492eadae04a8f598a4f7aa818a, type: 3}
+  m_PrefabInstance: {fileID: 716423098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1431386253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,6 +2455,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084904558}
   m_CullTransparentMesh: 1
+--- !u!1 &2121836332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 216869594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2121836339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121836332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fa17b6ea8bd8b499ad04235a6f57b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameUI: {fileID: 1431386258}
 --- !u!1001 &1141947772791631391
 PrefabInstance:
   m_ObjectHideFlags: 0
