@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 6d157fabe3f5c424fb4474a4ffba3a3c
+guid: d167f792c68d5204e9aa2c3158571370
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_LaserInspectorXML: {fileID: 9197481963319205126, guid: d0d717004bef49a45a9856fdd8258218, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

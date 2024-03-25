@@ -34,7 +34,7 @@ public class HealthComponent : MonoBehaviour
         Health -= inDamage;
         if (Health <= 0)
         {
-            HandleOnKilled.Invoke();
+             HandleOnKilled.Invoke();
         }
     }
 

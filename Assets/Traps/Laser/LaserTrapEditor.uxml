@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField binding-path="m_HallWidth" label="Hall Width" name="PropertyField" class="unity-base-field__aligned" />
+    <uie:PropertyField binding-path="m_HallHeight" label="Hall Height" class="unity-base-field__aligned" />
+    <ui:Slider picking-mode="Ignore" label="Laser Density" value="0.5" high-value="1" name="Slider" inverted="false" binding-path="m_LaserDensity" show-input-field="true" class="unity-base-field__aligned" />
+</ui:UXML>

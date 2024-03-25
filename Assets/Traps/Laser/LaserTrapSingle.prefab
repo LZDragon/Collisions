@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8232563540651823851}
   - component: {fileID: 416197353443366094}
+  - component: {fileID: 6697507179635896186}
   m_Layer: 7
   m_Name: LaserCollison
   m_TagString: Untagged
@@ -55,6 +56,19 @@ CapsuleCollider:
   m_Height: 9.34
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6697507179635896186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867179840372659974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29811ff7b3d4b07428725ee611f61eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapDamageAmount: 50
 --- !u!1 &4183067136756193938
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6355026160194586846}
   - component: {fileID: 6845789332576142603}
-  - component: {fileID: 5271765543084879551}
   m_Layer: 7
   m_Name: LaserTrapSingle
   m_TagString: Untagged
@@ -322,16 +335,3 @@ MonoBehaviour:
   laserCollider: {fileID: 416197353443366094}
   laserMaterial: {fileID: 2100000, guid: 70ccf915b22120b44bb88e13f7004050, type: 2}
   width: 0
---- !u!114 &5271765543084879551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8761700876510518560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29811ff7b3d4b07428725ee611f61eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trapDamageAmount: 50
