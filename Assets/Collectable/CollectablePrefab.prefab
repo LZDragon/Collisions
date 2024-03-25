@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3606924913005652845}
   - component: {fileID: 3998322389786312636}
   - component: {fileID: -5072176799471589061}
+  - component: {fileID: -6044654147155051406}
+  - component: {fileID: -6194147845961480905}
   m_Layer: 6
   m_Name: CollectablePrefab
   m_TagString: Untagged
@@ -116,5 +118,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0c9742a77447614a9426893794bb2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!122 &-6044654147155051406
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819640003703926543}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4290438117
+  m_Size: 0.78
+--- !u!114 &-6194147845961480905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819640003703926543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30882fd01e353bc48bb84c83ac35f303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

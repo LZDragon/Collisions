@@ -330,8 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2374a4f1af09647be98d64dd3b9d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserEnd1: {fileID: 7497286669494718504}
-  laserEnd2: {fileID: 4183067136756193938}
+  laserEnd1: {fileID: 8822771774434926487}
+  laserEnd2: {fileID: 1651524111144374414}
   laserCollider: {fileID: 416197353443366094}
   laserMaterial: {fileID: 2100000, guid: 70ccf915b22120b44bb88e13f7004050, type: 2}
-  width: 0
