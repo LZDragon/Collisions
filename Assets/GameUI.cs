@@ -11,12 +11,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private Slider healthBar;
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private GameObject winText;
     private int score = 0;
 
     public void BindToPlayer(GameObject player)
@@ -44,6 +46,7 @@ public class GameUI : MonoBehaviour
     {
         score += amount;
         UpdateScoreText(score.ToString());
+        CheckForWin();
     }
 
     void UpdateScoreText(string value)
@@ -55,5 +58,14 @@ public class GameUI : MonoBehaviour
     {
         healthBar.maxValue = maxHealth;
         healthBar.value = maxHealth;
+    }
+
+    void CheckForWin()
+    {
+        if (score >= 100)
+        {
+            winText.SetActive(true);
+            SceneManager.LoadScene(0);
+        }
     }
 }
