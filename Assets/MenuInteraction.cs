@@ -22,6 +22,8 @@ public class MenuInteraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(Quit);
         if (howToButton != null)

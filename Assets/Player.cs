@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(HealthComponent))]
 public class Player : MonoBehaviour
@@ -16,6 +17,6 @@ public class Player : MonoBehaviour
 
     private void OnKilled()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(0);
     }
 }
