@@ -1,19 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
+
 [RequireComponent(typeof(HealthComponent))]
 public class LaserTrapPower : MonoBehaviour
 {
+    private HealthComponent healthComponent;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<HealthComponent>().HandleOnKilled += OnKilled;
+        healthComponent = GetComponent<HealthComponent>();
+        healthComponent.HandleOnKilled += OnKilled;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            healthComponent.TakeDamage(50);
+        }
     }
 
     void OnKilled()
