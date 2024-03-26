@@ -15,30 +15,57 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(HealthComponent))]
 public class LaserTrapPower : MonoBehaviour
 {
-    private HealthComponent healthComponent;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]private HealthComponent healthComponent;
+    private bool inCollider = false;
+
+    private List<GameObject> lasers;
+
+    public List<GameObject> Lasers
     {
-        healthComponent = GetComponent<HealthComponent>();
-        healthComponent.HandleOnKilled += OnKilled;
+        get => lasers;
+        set => lasers = value;
     }
 
-    private void OnTriggerStay(Collider other)
+
+    // Start is called before the first frame update
+    void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        healthComponent.HandleOnKilled += OnKilled;
+        healthComponent.HandleHealthUpdated += OnHealthUpdate;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        inCollider = true;
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inCollider = false;
+    }
+
+    private void Update()
+    {
+        if (inCollider && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("boop");
             healthComponent.TakeDamage(50);
         }
     }
 
     void OnKilled()
     {
-        LaserBeam[] childrenLaserBeams = GetComponentsInChildren<LaserBeam>();
-        foreach (var laserBeam in childrenLaserBeams)
+        foreach (var laserBeam in lasers)
         {
-            laserBeam.PowerDown();
+            laserBeam.GetComponent<LaserBeam>().PowerDown();
         }
 
     }
-    
+
+    void OnHealthUpdate(float health)
+    {
+        
+    }
+
 }

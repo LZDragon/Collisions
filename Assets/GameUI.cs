@@ -19,6 +19,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private GameObject winText;
+    [SerializeField] private GameObject loseText;
     private int score = 0;
 
     public void BindToPlayer(GameObject player)
@@ -67,5 +68,10 @@ public class GameUI : MonoBehaviour
             winText.SetActive(true);
             SceneManager.LoadScene(0);
         }
+    }
+
+    public void DisplayLoseText()
+    {
+        loseText.SetActive(true);
     }
 }

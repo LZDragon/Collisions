@@ -20,6 +20,7 @@ public class LaserTrap : MonoBehaviour
     public GameObject m_LaserPower;
     public Transform  m_LaserContainer;
     public GameObject m_LaserTrapSingle;
+    public List<GameObject> lasers;
 
 
     private void OnDrawGizmosSelected()
@@ -46,6 +47,7 @@ public class LaserTrap : MonoBehaviour
             LaserTrapConstruction constructionScript = newLaser.GetComponent<LaserTrapConstruction>();
             constructionScript.SetLaserEnds(m_HallWidth);
             constructionScript.UpdateCollision();
+            lasers.Add(newLaser);
         }
 
         for (float j = 0.3f; j <= m_HallWidth-0.3f; j += m_LaserSpacing * 1.5f)
@@ -56,6 +58,12 @@ public class LaserTrap : MonoBehaviour
             LaserTrapConstruction constructionScript = newLaser.GetComponent<LaserTrapConstruction>();
             constructionScript.SetLaserEnds(m_HallHeight);
             constructionScript.UpdateCollision();
+            lasers.Add(newLaser);
         }
+    }
+
+    private void Start()
+    {
+        m_LaserPower.GetComponent<LaserTrapPower>().Lasers = lasers;
     }
 }

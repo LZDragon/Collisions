@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     private void OnKilled()
     {
+        gameUI.DisplayLoseText();
         SceneManager.LoadScene(0);
     }
 }
